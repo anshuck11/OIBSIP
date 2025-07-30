@@ -1,36 +1,518 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
+/* Minimal Color Palette */
+:root {
+    --primary-blue: #0066ff;
+    --accent-green: #00ff88;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --bg-primary: #0a0d14;
+    --bg-secondary: #151922;
+    --bg-card: #1a1f2e;
+}
+
+/* Clean body background */
+body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    line-height: 1.6;
+}
+
+/* Minimal Hero Section */
 .banner {
     width: 100%;
     height: auto;
-    background-color: hsl(0, 0%, 13%);
+    background-color: var(--bg-primary) !important;
+    background-image: none !important;
+    min-height: 100vh;
+    padding: 100px 0 50px 0;
+}
 
+.banner * {
+    color: var(--text-primary) !important;
+}
+
+.banner p, .banner small {
+    color: var(--text-secondary) !important;
+    line-height: 1.7;
+}
+
+/* Clean hero badge */
+.hero-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    padding: 12px 20px !important;
+    border-radius: 30px !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    margin-bottom: 2rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
+}
+
+.hero-badge i {
+    color: var(--accent-green) !important;
+    margin-right: 8px !important;
+}
+
+/* Clean gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-green) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 800 !important;
+    font-size: 4rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Clean hero text */
+.banner .fs-1 {
+    font-size: 4rem !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.banner p {
+    font-size: 1.2rem !important;
+    max-width: 600px !important;
+    margin-bottom: 2.5rem !important;
+    color: var(--text-secondary) !important;
+}
+
+.banner .gradient-text {
+    display: block !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Clean buttons */
+.hero-buttons {
+    display: flex !important;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue) !important;
+    border: none !important;
+    color: white !important;
+    padding: 14px 28px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+}
+
+.btn-primary:hover {
+    background-color: #0052cc !important;
+    transform: translateY(-2px) !important;
+    color: white !important;
+}
+
+.btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    color: var(--text-primary) !important;
+    background: transparent !important;
+    padding: 12px 26px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: var(--text-primary) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Clean rocket container */
+.rocket-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
 }
 
 .rocket {
     max-width: 90%;
     height: auto;
+    opacity: 0.9;
 }
 
+/* Remove all glow effects */
+.floating-animation {
+    animation: none !important;
+    filter: none !important;
+}
+
+.glow-effect {
+    display: none !important;
+}
+
+/* Clean navigation */
+.navbar {
+    background-color: rgba(10, 13, 20, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 1rem 0 !important;
+}
+
+.navbar-brand {
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+    font-size: 1.4rem !important;
+}
+
+.navbar-brand:hover {
+    color: var(--primary-blue) !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+    transition: color 0.3s ease !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--text-primary) !important;
+}
+
+/* Clean sections */
+.section-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    margin-bottom: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.section-badge i {
+    color: var(--accent-green) !important;
+    margin-right: 6px !important;
+}
+
+.section-title {
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important;
+    font-size: 2.5rem !important;
+}
+
+.section-subtitle {
+    color: var(--text-secondary) !important;
+    font-size: 1.1rem !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+}
+
+/* Clean feature cards */
+.feature-card {
+    background-color: var(--bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    padding: 2rem !important;
+    transition: all 0.3s ease !important;
+    text-align: center;
+    height: 100% !important;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.feature-title {
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.feature-description {
+    color: var(--text-secondary) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.feature-btn {
+    border: 1px solid var(--primary-blue) !important;
+    color: var(--primary-blue) !important;
+    background: transparent !important;
+    padding: 10px 20px !important;
+    font-weight: 500 !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+}
+
+.feature-btn:hover {
+    background-color: var(--primary-blue) !important;
+    color: white !important;
+}
+
+/* Clean highlight cards */
+.dark-card {
+    background-color: var(--bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-primary) !important;
+}
+
+.light-card {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: var(--text-primary) !important;
+}
+
+.highlight-card {
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.highlight-icon {
+    font-size: 2.5rem !important;
+    color: var(--primary-blue) !important;
+    margin-bottom: 1rem !important;
+}
+
+.light-card .highlight-icon {
+    color: var(--accent-green) !important;
+}
+
+.light-card h2,
+.light-card p {
+    color: var(--text-primary) !important;
+}
+
+/* Clean pricing cards */
+.pricing-card {
+    background-color: var(--bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.pricing-card .card-header {
+    background-color: var(--bg-card) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-primary) !important;
+}
+
+.pricing-card .card-body {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+}
+
+.featured-plan {
+    border: 2px solid var(--primary-blue) !important;
+}
+
+.featured-plan .card-header {
+    background-color: var(--primary-blue) !important;
+    color: white !important;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-green) !important;
+    color: var(--bg-primary) !important;
+    padding: 6px 16px !important;
+    border-radius: 16px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    z-index: 10;
+}
+
+.plan-icon {
+    font-size: 1.8rem !important;
+    color: var(--primary-blue) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.featured-plan .plan-icon {
+    color: white !important;
+}
+
+/* Clean contact section */
+.contact-section {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+.contact-form {
+    background-color: var(--bg-card) !important;
+    padding: 2rem !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.form-control {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-primary) !important;
+    border-radius: 8px !important;
+}
+
+.form-control:focus {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--primary-blue) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 102, 255, 0.25) !important;
+}
+
+.form-floating label {
+    color: var(--text-secondary) !important;
+}
+
+.contact-btn {
+    background-color: var(--primary-blue) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 12px 24px !important;
+    font-weight: 600 !important;
+}
+
+.contact-btn:hover {
+    background-color: #0052cc !important;
+    color: white !important;
+}
+
+.contact-feature-item {
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-feature-item i {
+    color: var(--accent-green) !important;
+    margin-right: 10px !important;
+}
+
+/* Clean footer */
+.footer-enhanced {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-primary) !important;
+}
+
+.footer-enhanced .nav-link:hover {
+    color: var(--primary-blue) !important;
+}
+
+/* Clean scroll button */
 .up {
     position: fixed;
-    right: 50px;
-    bottom: 70px;
-    animation: blink 1.5s steps(5, start) infinite;
+    right: 30px;
+    bottom: 30px;
+    background-color: var(--primary-blue) !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    animation: none !important;
+}
+
+.up:hover {
+    transform: translateY(-3px);
+    background-color: #0052cc !important;
+}
+
+.up a {
+    color: white !important;
+    text-decoration: none;
+}
+
+/* Typography fixes */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+}
+
+p {
+    color: var(--text-secondary) !important;
+}
+
+.text-success {
+    color: var(--accent-green) !important;
+}
+
+.border-bottom {
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Remove all animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(0px); }
+}
+
+@keyframes glow {
+    0% { opacity: 1; }
+    100% { opacity: 1; }
 }
 
 @keyframes blink {
-    50% {
-        opacity: 0.0;
+    0%, 100% { opacity: 1; }
+    50% { opacity: 1; }
+}
+
+/* Responsive */
+@media screen and (max-width: 1400px) {
+    .rocket {
+        width: 400px;
     }
 }
 
-@media screen and (max-width:1400px) {
+@media (max-width: 768px) {
     .rocket {
-        width: 400px;
+        max-width: 300px;
+    }
+    
+    .gradient-text,
+    .banner .fs-1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .hero-buttons {
+        flex-direction: column !important;
+        gap: 0.8rem !important;
+    }
+    
+    .hero-buttons .btn {
+        width: 100% !important;
     }
 }
